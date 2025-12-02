@@ -226,7 +226,7 @@ def tftp_put(sock, server_address, filename):
 
 
             server_address = server_address_new
-            break  # 성공적으로 응답 받음
+            break
         except socket.timeout:
             retries += 1
             print(f"   타임아웃 발생. 재시도 중 ({retries}/{MAX_RETRIES})...")
