@@ -48,7 +48,7 @@ def handle_error(data):
     print(f'🔥 TFTP 오류 발생: 에러 코드 {error_code}')
     print(f'   메시지: {error_message}')
 
-    # 과제 요구사항 에러 코드 처리
+    #  에러 코드 처리
     if error_code == 1:
         print("   -> File not found 오류입니다.")
     elif error_code == 6:
@@ -72,7 +72,7 @@ def tftp_get(sock, filename, server_address):
         except socket.timeout:
             retries += 1
             if retries == MAX_TRY:
-                # 과제 요구사항: RRQ 응답 없을 경우 처리
+                 # RRQ 응답 없을 경우 처리
                 print("🚫 서버 응답이 없습니다. TFTP 다운로드 실패.")
                 sys.exit()
 
@@ -151,7 +151,7 @@ def tftp_put(sock, filename, server_address):
         except socket.timeout:
             retries += 1
             if retries == MAX_TRY:
-                # 과제 요구사항: WRQ 응답 없을 경우 처리
+                # WRQ 응답 없을 경우 처리
                 print("🚫 서버 응답이 없습니다. TFTP 업로드 실패.")
                 sys.exit()
 
